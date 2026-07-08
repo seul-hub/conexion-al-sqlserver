@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="DATOS/DATOS.csproj" Id="235d7d6f-79ee-4e6a-bc02-748a9723dab7" />
+  <Project Path="entidades/entidades.csproj" Id="c29c1e66-0682-411c-83e3-71deeb800ff2" />
+  <Project Path="LOGICA/LOGICA.csproj" Id="11ba8aa5-bd11-4dd5-b46e-00507e2fa2e1" />
+  <Project Path="SESION/SESION.csproj" Id="637ab901-fea7-4616-9d38-a3e5fbad78f4" />
+  <Project Path="SISTEMA/SISTEMA.csproj" Id="ab7b889e-7ac8-4ec5-8973-70798519c0ef" />
+  <Project Path="VISTA/VISTA.csproj" Id="3663440e-d4cd-4849-b31f-f3627423c059" />
+</Solution>
