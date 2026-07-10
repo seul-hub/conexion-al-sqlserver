@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DATOS\DATOS.csproj" />
+    <ProjectReference Include="..\entidades\ENTIDADES.csproj" />
     <ProjectReference Include="..\SESION\SESION.csproj" />
     <ProjectReference Include="..\SISTEMA\SISTEMA.csproj" />
   </ItemGroup>
