@@ -10,5 +10,6 @@ namespace entidades
     {
         public int IdRol {  get; set; }
         public int IdPermiso { get; set; }
+        //No tiene mucha información porque sirve para representar la relación entre roles y permisos.
     }
 }

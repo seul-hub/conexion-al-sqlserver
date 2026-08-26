@@ -8,7 +8,7 @@ namespace DATOS
 {
     public class InsertarUsuario
     {
-        private Conexion conexion = new Conexion();
+        private Conexion conexion = new Conexion();//es el encargado de permitir la conexion a la BD de sqlserver.
 
         public void Insertar(Usuario usuario)
         {

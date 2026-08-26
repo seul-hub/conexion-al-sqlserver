@@ -44,7 +44,7 @@
             button1.TabIndex = 0;
             button1.Text = "ingresar";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += btnIngresar_Click;
             // 
             // btnsalir
             // 
@@ -54,6 +54,7 @@
             btnsalir.TabIndex = 1;
             btnsalir.Text = "salir";
             btnsalir.UseVisualStyleBackColor = true;
+            btnsalir.Click += btnsalir_Click;
             // 
             // txtUsuario
             // 
@@ -93,7 +94,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(371, 198);
             Controls.Add(lblcontraseña);
             Controls.Add(lbluser);
             Controls.Add(txtPassword);
@@ -102,6 +103,7 @@
             Controls.Add(button1);
             Name = "FrmLogin";
             Text = "Form1";
+            Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

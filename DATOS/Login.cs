@@ -7,11 +7,11 @@ namespace DATOS
 {
     public class Login
     {
-        private Conexion conexion = new Conexion();
+        private Conexion conexion = new Conexion();//es el encargado de permitir la conexion a la BD de sqlserver.
 
         public Usuario IniciarSesion(string userName, string password)
         {
-            Usuario usuario = null;
+            Usuario usuario = null;//"Por ahora no tengo ningún usuario."
 
             try
             {
@@ -26,7 +26,7 @@ namespace DATOS
 
                 SqlDataReader lector = comando.ExecuteReader();
 
-                if (lector.Read())
+                if (lector.Read())//este if detecta si el lector tiene datos, es decir, si el procedimiento almacenado devolvió un usuario.
                 {
                     usuario = new Usuario();
 

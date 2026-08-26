@@ -2,7 +2,7 @@
 
 namespace entidades
 {
-    public class Persona
+    public class Persona//Representa los datos personales
     {
         public int idpersona { get; set; }
         public string nombre { get; set; }
@@ -15,7 +15,7 @@ namespace entidades
         public DateTime fechaAlta { get; set; }
         public DateTime? fechaBaja { get; set; }
         public string email { get; set; }
-        public int? idDomicilio { get; set; }
+        public int? idDomicilio { get; set; }//significa que una persona puede tener o no un domicilio asociado.
         public Persona()
 
         {

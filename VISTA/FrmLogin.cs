@@ -19,18 +19,45 @@ namespace VISTA
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnIngresar_Click(object sender, EventArgs e)
         {
-            LoginLogica login = new LoginLogica();
-            Usuario usuario = login.IniciarSesion(txtUsuario.Text, txtPassword.Text);
-            if (usuario != null)
+            try
             {
-                MessageBox.Show("Bienvenido " + usuario.UserName);
+                LoginLogica login = new LoginLogica();
+
+                Usuario usuario = login.IniciarSesion(
+                    txtUsuario.Text,
+                    txtPassword.Text
+                );
+
+                if (usuario != null)
+                {
+                    MessageBox.Show("Bienvenido " + usuario.UserName);
+
+                    Frmprincipal principal = new Frmprincipal();
+                    principal.Show();
+
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
+                MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -5,11 +5,11 @@ namespace LOGICA
 {
     public class LoginLogica
     {
-        private Login loginDatos = new Login();
+        private Login datos = new Login();
 
         public Usuario IniciarSesion(string userName, string password)
         {
-            return loginDatos.IniciarSesion(userName, password);
+            return datos.IniciarSesion(userName, password);
         }
     }
 }
