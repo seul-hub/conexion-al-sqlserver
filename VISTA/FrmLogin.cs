@@ -18,9 +18,26 @@ namespace VISTA
         {
 
         }
-
+        private ErrorProvider errorProvider1 = new ErrorProvider();
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            errorProvider1.Clear(); // limpia errores previos
+
+            bool valido = true;
+
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            {
+                errorProvider1.SetError(txtUsuario, "Este campo es obligatorio.");
+                valido = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                errorProvider1.SetError(txtPassword, "Este campo es obligatorio.");
+                valido = false;
+            }
+
+            if (!valido) return;
             try
             {
                 LoginLogica login = new LoginLogica();

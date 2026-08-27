@@ -22,9 +22,26 @@ namespace VISTA
             InitializeComponent();
             idUsuarioSeleccionado = idUsuario;
         }
-
+        private ErrorProvider errorProvider1 = new ErrorProvider();
         private void FrmModificarUsuario_Load(object sender, EventArgs e)
         {
+            errorProvider1.Clear(); // limpia errores previos
+
+            bool valido = true;
+
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            {
+                errorProvider1.SetError(txtUsuario, "Este campo es obligatorio.");
+                valido = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtContraseña.Text))
+            {
+                errorProvider1.SetError(txtContraseña, "Este campo es obligatorio.");
+                valido = false;
+            }
+
+            if (!valido) return;
             ListarRolesLogica rolLogica = new ListarRolesLogica();
             cmbRol.DataSource = rolLogica.Listar();
             cmbRol.DisplayMember = "nombre_rol";

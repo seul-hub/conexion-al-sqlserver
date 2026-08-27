@@ -30,15 +30,14 @@
         {
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             label4 = new Label();
             txtUsuario = new TextBox();
             txtPassword = new TextBox();
-            cmbPersona = new ComboBox();
             cmbRol = new ComboBox();
             chkActivo = new CheckBox();
             btnGuardar = new Button();
             btnCancelar = new Button();
+            cmbPersona = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -59,19 +58,10 @@
             label2.TabIndex = 1;
             label2.Text = "contraseña";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 83);
-            label3.Name = "label3";
-            label3.Size = new Size(49, 15);
-            label3.TabIndex = 2;
-            label3.Text = "persona";
-            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 112);
+            label4.Location = new Point(21, 111);
             label4.Name = "label4";
             label4.Size = new Size(21, 15);
             label4.TabIndex = 3;
@@ -91,20 +81,11 @@
             txtPassword.Size = new Size(100, 23);
             txtPassword.TabIndex = 5;
             // 
-            // cmbPersona
-            // 
-            cmbPersona.FormattingEnabled = true;
-            cmbPersona.Items.AddRange(new object[] { "Juan Perez.", "Samir Schenfeld.", "Marcos Mancilla." });
-            cmbPersona.Location = new Point(83, 83);
-            cmbPersona.Name = "cmbPersona";
-            cmbPersona.Size = new Size(121, 23);
-            cmbPersona.TabIndex = 6;
-            // 
             // cmbRol
             // 
             cmbRol.FormattingEnabled = true;
             cmbRol.Items.AddRange(new object[] { "Administrador.", "Empleado.", "Supervisor." });
-            cmbRol.Location = new Point(83, 112);
+            cmbRol.Location = new Point(83, 111);
             cmbRol.Name = "cmbRol";
             cmbRol.Size = new Size(121, 23);
             cmbRol.TabIndex = 7;
@@ -112,7 +93,7 @@
             // chkActivo
             // 
             chkActivo.AutoSize = true;
-            chkActivo.Location = new Point(83, 141);
+            chkActivo.Location = new Point(83, 140);
             chkActivo.Name = "chkActivo";
             chkActivo.Size = new Size(82, 19);
             chkActivo.TabIndex = 8;
@@ -121,7 +102,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(48, 166);
+            btnGuardar.Location = new Point(40, 165);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 9;
@@ -131,7 +112,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(129, 166);
+            btnCancelar.Location = new Point(129, 165);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 10;
@@ -139,20 +120,28 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // cmbPersona
+            // 
+            cmbPersona.FormattingEnabled = true;
+            cmbPersona.Items.AddRange(new object[] { "Administrador.", "Empleado.", "Supervisor." });
+            cmbPersona.Location = new Point(83, 83);
+            cmbPersona.Name = "cmbPersona";
+            cmbPersona.Size = new Size(121, 23);
+            cmbPersona.TabIndex = 11;
+            // 
             // FrmAgregarUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(262, 236);
+            Controls.Add(cmbPersona);
             Controls.Add(btnCancelar);
             Controls.Add(btnGuardar);
             Controls.Add(chkActivo);
             Controls.Add(cmbRol);
-            Controls.Add(cmbPersona);
             Controls.Add(txtPassword);
             Controls.Add(txtUsuario);
             Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FrmAgregarUsuario";
@@ -166,14 +155,13 @@
 
         private Label label1;
         private Label label2;
-        private Label label3;
         private Label label4;
         private TextBox txtUsuario;
         private TextBox txtPassword;
-        private ComboBox cmbPersona;
         private ComboBox cmbRol;
         private CheckBox chkActivo;
         private Button btnGuardar;
         private Button btnCancelar;
+        private ComboBox cmbPersona;
     }
 }
