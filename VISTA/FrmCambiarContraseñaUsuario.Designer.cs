@@ -46,6 +46,7 @@
             btnCambiar_contraseña.TabIndex = 0;
             btnCambiar_contraseña.Text = "cambiar";
             btnCambiar_contraseña.UseVisualStyleBackColor = true;
+            btnCambiar_contraseña.Click += btnCambiar_contraseña_Click;
             // 
             // button2
             // 

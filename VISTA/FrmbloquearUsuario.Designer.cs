@@ -59,6 +59,7 @@
             btnBloquear.TabIndex = 2;
             btnBloquear.Text = "bloquear";
             btnBloquear.UseVisualStyleBackColor = true;
+            btnBloquear.Click += btnBloquear_Click;
             // 
             // btnCancelar
             // 
@@ -81,6 +82,7 @@
             Controls.Add(label1);
             Name = "FrmbloquearUsuario";
             Text = "FrmbloquearUsuario";
+            Load += FrmbloquearUsuario_Load;
             ResumeLayout(false);
             PerformLayout();
         }
