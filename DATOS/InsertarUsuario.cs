@@ -8,16 +8,16 @@ namespace DATOS
 {
     public class InsertarUsuario
     {
-        private Conexion conexion = new Conexion();//es el encargado de permitir la conexion a la BD de sqlserver.
+        private Conexion conexion = new Conexion();
 
         public void Insertar(Usuario usuario)
         {
             try
             {
                 SqlCommand comando = new SqlCommand("sp_insert_usuario", conexion.ObtenerConexion());
-
                 comando.CommandType = CommandType.StoredProcedure;
 
+                // Le manda al SP los 9 campos que necesita para crear el registro nuevo en la tabla usuario.
                 comando.Parameters.AddWithValue("@user_name", usuario.UserName);
                 comando.Parameters.AddWithValue("@password", usuario.password);
                 comando.Parameters.AddWithValue("@activo", usuario.activo);
@@ -30,6 +30,8 @@ namespace DATOS
 
                 conexion.AbrirConexion();
 
+                // ExecuteNonQuery: se usa cuando la acción NO devuelve filas de resultado
+                // (INSERT, UPDATE, DELETE) — a diferencia de ExecuteReader que sí trae datos.
                 comando.ExecuteNonQuery();
             }
             catch (Exception ex)

@@ -1,5 +1,7 @@
 using LOGICA;
 using entidades;
+using System.Security.Cryptography;
+using System.Text;
 namespace VISTA
 {
     public partial class FrmLogin : Form
@@ -21,7 +23,7 @@ namespace VISTA
         }
 
         private ErrorProvider errorProvider1 = new ErrorProvider();
-
+       
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
@@ -45,13 +47,15 @@ namespace VISTA
             {
                 LoginLogica login = new LoginLogica();
 
-                // Intenta autenticar con usuario/contraseña. Si son correctos, devuelve el objeto Usuario;
-                // si no, devuelve null (por eso se chequea con "!= null" abajo).
+                string resultado = txtUsuario.Text + txtPassword.Text;
+                string passwordHash = SeguridadSha256.Sha256(resultado);
                 Usuario usuario = login.IniciarSesion(
                     txtUsuario.Text,
-                    txtPassword.Text
+                    passwordHash
                 );
+                //aqui debe estar el sha256(txtpassword)
 
+                //contraseña hasheada
                 if (usuario != null)
                 {
                     MessageBox.Show("Bienvenido " + usuario.UserName);

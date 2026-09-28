@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace LOGICA
 {
-  public class ListarPersonasLogica
+    public class ListarPersonasLogica
     {
-        private ListarPersonas listar=new ListarPersonas();
+        private ListarPersonas listar = new ListarPersonas();
+
         public List<Persona> Listar()
         {
-            return listar.Listar();
+            return listar.Listar(); // acá "return" porque este método sí devuelve un resultado (la lista)
         }
     }
 }

@@ -13,7 +13,7 @@ namespace DATOS
 
         public List<Persona> Listar()
         {
-            List<Persona> lista = new List<Persona>();
+            List<Persona> lista = new List<Persona>(); // acá se van a ir juntando todas las personas leídas
 
             try
             {
@@ -22,6 +22,8 @@ namespace DATOS
                 conexion.AbrirConexion();
                 SqlDataReader reader = comando.ExecuteReader();
 
+                // while (en vez de if, como en Login): acá SÍ se espera más de una fila,
+                // porque el SP puede devolver muchas personas, no una sola.
                 while (reader.Read())
                 {
                     Persona persona = new Persona
@@ -34,7 +36,7 @@ namespace DATOS
                         email = reader["email"].ToString(),
                         activo = Convert.ToBoolean(reader["activo"])
                     };
-                    lista.Add(persona);
+                    lista.Add(persona); // agrega esta persona a la lista antes de pasar a la siguiente fila
                 }
                 reader.Close();
             }
@@ -47,7 +49,7 @@ namespace DATOS
                 conexion.CerrarConexion();
             }
 
-            return lista;
+            return lista; // devuelve la lista completa, con todas las personas que se hayan leído
         }
     }
 }

@@ -13,7 +13,7 @@ namespace LOGICA
 
         public void Cambiar(int idUsuario, string password)
         {
-            cambiar.Cambiar(idUsuario, password);
+            cambiar.Cambiar(idUsuario, password); // mismo patrón: solo reenvía
         }
     }
 }
