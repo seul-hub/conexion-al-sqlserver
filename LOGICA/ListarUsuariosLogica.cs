@@ -8,6 +8,8 @@ namespace LOGICA
     {
         private ListarUsuario listar = new ListarUsuario();
 
+        // Dos métodos, porque DATOS.ListarUsuario también tiene dos: uno para la lista completa,
+        // otro para traer un usuario puntual por ID.
         public List<UsuarioListado> Listar()
         {
             return listar.Listar();

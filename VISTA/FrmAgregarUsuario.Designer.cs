@@ -99,6 +99,7 @@
             chkActivo.TabIndex = 8;
             chkActivo.Text = "checkBox1";
             chkActivo.UseVisualStyleBackColor = true;
+            chkActivo.CheckedChanged += chkActivo_CheckedChanged;
             // 
             // btnGuardar
             // 

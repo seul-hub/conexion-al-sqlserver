@@ -88,5 +88,10 @@ namespace VISTA
         {
             this.Close();
         }
+
+        private void chkActivo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

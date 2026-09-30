@@ -1,4 +1,4 @@
-﻿using entidades;
+﻿e using entidades;
 using Microsoft.Data.SqlClient;
 using Microsoft.SqlServer.Server;
 using Microsoft.VisualBasic;
@@ -12,8 +12,10 @@ namespace DATOS
 {
     public class ListarUsuario
     {
-        private Conexion conexion = new Conexion();//es el encargado de permitir la conexion a la BD de sqlserver.
+        private Conexion conexion = new Conexion();
 
+        // Trae TODOS los usuarios, pero con datos "resumidos y legibles" (UsuarioListado),
+        // pensado específicamente para mostrar en el DataGridView de FrmListarUsuario.
         public List<UsuarioListado> Listar()
         {
             List<UsuarioListado> lista = new List<UsuarioListado>();
@@ -21,11 +23,8 @@ namespace DATOS
             try
             {
                 SqlCommand comando = new SqlCommand("sp_listar_usuarios", conexion.ObtenerConexion());
-
                 comando.CommandType = CommandType.StoredProcedure;
-
                 conexion.AbrirConexion();
-
                 SqlDataReader lector = comando.ExecuteReader();
 
                 while (lector.Read())
@@ -54,6 +53,8 @@ namespace DATOS
             return lista;
         }
 
+        // Trae UN SOLO usuario, con TODOS sus datos (no resumidos como arriba),
+        // pensado para precargar FrmModificarUsuario cuando se va a editar a alguien puntual.
         public Usuario ObtenerPorId(int idUsuario)
         {
             Usuario usuario = null;
@@ -68,6 +69,7 @@ namespace DATOS
 
                 SqlDataReader lector = comando.ExecuteReader();
 
+                // if (no while): acá se espera como mucho UNA fila, porque el id_usuario es único.
                 if (lector.Read())
                 {
                     usuario = new Usuario();
@@ -94,7 +96,7 @@ namespace DATOS
                 conexion.CerrarConexion();
             }
 
-            return usuario;
+            return usuario; // devuelve el usuario encontrado, o null si no existía ese ID
         }
     }
 }
