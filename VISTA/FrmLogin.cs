@@ -60,7 +60,7 @@ namespace VISTA
                 {
                     MessageBox.Show("Bienvenido " + usuario.UserName);
 
-                    Frmprincipal principal = new Frmprincipal();
+                    FrmPrincipal2 principal = new FrmPrincipal2 ();
                     principal.Show(); // abre la pantalla principal del sistema
 
                     this.Hide(); // oculta el login (no lo cierra del todo, queda en memoria)
