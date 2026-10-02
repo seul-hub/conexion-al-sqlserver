@@ -37,49 +37,49 @@
             // 
             // button1
             // 
-            button1.Location = new Point(0, 127);
+            button1.Location = new Point(87, 60);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(100, 47);
             button1.TabIndex = 1;
-            button1.Text = "button1";
+            button1.Text = "AgregarUsuario";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(112, 127);
+            button2.Location = new Point(87, 113);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(100, 47);
             button2.TabIndex = 2;
-            button2.Text = "button2";
+            button2.Text = "BloquearUsuario";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(218, 127);
+            button3.Location = new Point(87, 166);
             button3.Name = "button3";
-            button3.Size = new Size(75, 23);
+            button3.Size = new Size(100, 47);
             button3.TabIndex = 3;
-            button3.Text = "button3";
+            button3.Text = "CambiarContraseñaUsuario";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
             // button4
             // 
-            button4.Location = new Point(322, 127);
+            button4.Location = new Point(87, 219);
             button4.Name = "button4";
-            button4.Size = new Size(75, 23);
+            button4.Size = new Size(100, 47);
             button4.TabIndex = 4;
-            button4.Text = "button4";
+            button4.Text = "Ñ";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
             // button5
             // 
-            button5.Location = new Point(412, 127);
+            button5.Location = new Point(87, 272);
             button5.Name = "button5";
-            button5.Size = new Size(86, 38);
+            button5.Size = new Size(100, 47);
             button5.TabIndex = 5;
             button5.Text = "button5";
             button5.UseVisualStyleBackColor = true;
