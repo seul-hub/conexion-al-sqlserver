@@ -39,4 +39,4 @@ namespace entidades // ojo: esto probablemente debería estar en el namespace "e
             this.ValidarDatosPersonales = ValidarDatosPersonales;
         }
     }
-}}
+}

@@ -14,9 +14,11 @@ namespace LOGICA
 
         public void Cambiar(int idUsuario, string password)
         {
+
             ListasUsuariosLogica usuarioLogica = new ListasUsuariosLogica();
             Usuario usuario=usuarioLogica.ObtenerPorId(idUsuario); 
             string hashpassword= SeguridadSha256Logica.Sha256(usuario.UserName + password);
+
             cambiar.Cambiar(idUsuario, hashpassword); // mismo patrón: solo reenvía
         }
     }

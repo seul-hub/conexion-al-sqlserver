@@ -61,10 +61,13 @@ namespace VISTA
 
             try
             {
+                string resultado = Aletorio();
                 Usuario usuario = new Usuario();
+                
 
                 usuario.UserName = txtUsuario.Text;
-                usuario.password = txtPassword.Text;
+                usuario.password = resultado;
+                txtPassword.Text = resultado;
                 usuario.activo = chkActivo.Checked;
                 usuario.DebeCambiarPass = true;        // todo usuario nuevo arranca debiendo cambiar su contraseña
                 usuario.DiasValidezPass = 30;          // valor fijo por defecto
@@ -83,7 +86,19 @@ namespace VISTA
                 MessageBox.Show(ex.Message);
             }
         }
-
+        private string Aletorio()
+        {
+            Random random = new Random();
+            string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string resultado="";
+            for (int i =0;i < 8; ++ i)
+            {
+                int posicion = random.Next(0, caracteres.Length);
+              
+                resultado += caracteres[posicion];
+            }
+            return resultado;
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
