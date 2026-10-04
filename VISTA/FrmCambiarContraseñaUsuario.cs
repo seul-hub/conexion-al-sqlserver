@@ -20,23 +20,21 @@ namespace VISTA
         // al lado de un control cuando algo no es válido.
         private ErrorProvider errorProvider1 = new ErrorProvider();
 
-        public FrmCambiarContraseñaUsuario()
+        public FrmCambiarContraseñaUsuario(int IdUsuario)
         {
             InitializeComponent(); // arma todos los controles visuales del form (ver explicación completa que ya vimos)
+            idUsuarioSeleccionado = IdUsuario;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close(); // botón "cancelar": cierra el formulario sin hacer nada
         }
-
+        private int idUsuarioSeleccionado;
+       
         private void FrmCambiarContraseñaUsuario_Load(object sender, EventArgs e)
         {
-            // Trae la lista de usuarios (capa LOGICA) para llenar el combobox.
-            ListasUsuariosLogica usuarioLogica = new ListasUsuariosLogica();
-            cmbUsuario.DataSource = usuarioLogica.Listar(); // la lista completa de usuarios
-            cmbUsuario.DisplayMember = "UserName";          // lo que se VE en el combobox
-            cmbUsuario.ValueMember = "IdUsuario";            // lo que se GUARDA por dentro (el ID real)
+           
         }
 
         private void btnCambiar_contraseña_Click(object sender, EventArgs e)
@@ -65,11 +63,11 @@ namespace VISTA
             // Solo cambia la contraseña si ambos campos coinciden
             if (txtContraseña_Nueva.Text == txtRepetir_Contraseña.Text)
             {
-                CambiarPassword cambiarPassword = new CambiarPassword(); // objeto de la capa DATOS
+                CambiarPasswordLogica cambiarPassword = new CambiarPasswordLogica(); // objeto de la capa DATOS
 
                 // Llama al método que ejecuta el UPDATE en SQL Server.
                 // (int) convierte el ID elegido en el combo (que llega como "object") a un número entero.
-                cambiarPassword.Cambiar((int)cmbUsuario.SelectedValue, txtContraseña_Nueva.Text);
+                cambiarPassword.Cambiar(idUsuarioSeleccionado, txtContraseña_Nueva.Text);
 
                 MessageBox.Show("Contraseña cambiada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

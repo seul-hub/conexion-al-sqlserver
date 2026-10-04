@@ -61,7 +61,9 @@ namespace VISTA
 
             try
             {
+
                 string resultado = Aletorio();
+
                 Usuario usuario = new Usuario();
                 
 
@@ -86,15 +88,29 @@ namespace VISTA
                 MessageBox.Show(ex.Message);
             }
         }
+
         private string Aletorio()
         {
             Random random = new Random();
             string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            string resultado="";
-            for (int i =0;i < 8; ++ i)
+            string resultado = "";
+            for (int i = 0; i < 8; ++i)
             {
                 int posicion = random.Next(0, caracteres.Length);
-              
+            }
+            return resultado;
+        }
+
+        private string Aleatorio()
+        {
+            Random random = new Random();
+            string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string resultado = "";
+            for (int i = 0; i < 8; ++i)
+            {
+                int posicion = random.Next(0, caracteres.Length);
+
+
                 resultado += caracteres[posicion];
             }
             return resultado;

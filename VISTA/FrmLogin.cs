@@ -58,12 +58,22 @@ namespace VISTA
                 //contraseña hasheada
                 if (usuario != null)
                 {
-                    MessageBox.Show("Bienvenido " + usuario.UserName);
+                    if (usuario.DebeCambiarPass)
+                    {
+                        FrmCambiarContraseñaUsuario frmCambiarContraseñaUsuario = new FrmCambiarContraseñaUsuario(usuario.IdUsuario);
+                        frmCambiarContraseñaUsuario.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bienvenido " + usuario.UserName);
+
 
                     FrmPrincipal2 principal = new FrmPrincipal2 ();
                     principal.Show(); // abre la pantalla principal del sistema
 
-                    this.Hide(); // oculta el login (no lo cierra del todo, queda en memoria)
+
+                        this.Hide(); // oculta el login (no lo cierra del todo, queda en memoria)
+                    }
                 }
                 else
                 {

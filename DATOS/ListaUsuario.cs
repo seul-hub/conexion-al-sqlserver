@@ -1,4 +1,8 @@
+
 ﻿using entidades;
+
+﻿ using entidades;
+
 using Microsoft.Data.SqlClient;
 using Microsoft.SqlServer.Server;
 using Microsoft.VisualBasic;
@@ -98,5 +102,5 @@ namespace DATOS
 
             return usuario; // devuelve el usuario encontrado, o null si no existía ese ID
         }
-    }
+    } 
 }
